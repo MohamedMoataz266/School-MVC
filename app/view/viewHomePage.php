@@ -19,7 +19,6 @@ class viewHomePage extends View{
 
 </head>
 <body onload='homePage()'>
-<?php echo APPROOT;?>
 
 <?php require APPROOT.'/model/homemenu.php';?>
    <div class="container">
