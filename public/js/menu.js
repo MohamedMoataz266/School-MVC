@@ -3,7 +3,7 @@ function homePage(){
     $.get("../app/model/homemenu.php", function(data){
         $(".home").replaceWith('<a href="index.php">Home</a>');
         $(".atr1").replaceWith('<a href="login.php">logIn</a>');
-        $(".atr2").replaceWith('<a href="Registration.php">signUp</a>');
+        $(".atr2").replaceWith('<a href="registration.php">signUp</a>');
     });
     }
 function studentMenu(){

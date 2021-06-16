@@ -52,7 +52,7 @@ class viewLogIn extends View{
                                 <br>
 
 					<div class="text-center p-t-136">
-						<a class="txt2" href="Registration.php">
+						<a class="txt2" href="<?php echo URLROOT; ?>public/registration.php">
 							Create your Account
 							<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
 						</a>
