@@ -16,7 +16,7 @@ class viewLogIn extends View{
 		<div class="container-login100">
 			<div class="wrap-login100">
 				<div class="login100-pic js-tilt" data-tilt>
-					<img src="Images/banner_img.png" alt="IMG">
+					<img src="images/banner_img.png" alt="IMG">
 				</div>
 							<form class="login100-form validate-form" action="" method="POST">
 					<span class="login100-form-title">
@@ -58,8 +58,8 @@ class viewLogIn extends View{
 		</div>
 	</div>
 <?php 
-    require_once '../model/logIn.php';
+    require_once '../app/model/logIn.php';
     }
 }
 
-?>s
+?>
