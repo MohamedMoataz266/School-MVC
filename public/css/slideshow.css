@@ -1,0 +1,26 @@
+.carousel-inner{
+
+    background-color: black;
+}
+
+body {
+	padding: 0;
+	margin: 0;
+	background-color:#05243A;
+}
+
+
+.carousel-caption{  
+    
+    transform: translate(40%);
+}
+
+.container{
+    transform: translate(20%);
+}
+
+img{
+    height: 50%;
+    width: 50%;
+}
+

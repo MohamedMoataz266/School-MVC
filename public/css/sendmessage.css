@@ -1,0 +1,36 @@
+body{
+  margin: 0;
+  padding: 0;
+  background-size: cover;
+  font-family: sans-serif;
+  color:gray;
+  overflow-x:hidden
+
+}
+
+.register
+{
+background-color: rgb(0, 0, 0, 0.6);
+color:#fff;
+background-position: center; 
+top:50%;
+left: 50%;
+right: 50%;
+transform: translate(0%,100%);
+padding: 3px 30px;
+text-align: center;
+}
+.u{
+color:#4A99E0;
+margin-left: 30px;
+text-decoration: underline;
+}
+
+table td{
+padding:10px;
+color: white;
+margin-right: 170px;
+}
+table{
+margin-left: 200px;
+}

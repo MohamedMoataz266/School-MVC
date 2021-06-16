@@ -1,0 +1,91 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #05243A;
+}
+
+.container{
+    background-color: black;
+    width: 25%;
+    height: 60%;
+    text-align: center;
+    align-items: center;
+}
+
+.image{
+    background-color: black;
+    width: 25%;
+    height: 60%;
+}
+
+img{
+    transform: translate(20%,20%);
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li button{
+    --c: #283846;
+    color: var(--c);
+    font-size: 16px;
+    border: 0.3em solid var(--c);
+    border-radius: 0.5em;
+    width: 16em;
+    height: 6em;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: sans-serif;
+    letter-spacing: 0.1em;
+    text-align: center;
+    line-height: 3em;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: 0.5s;
+    margin: 1em;
+    cursor: pointer;
+}
+
+nav ul li button span {
+    position: absolute;
+    width: 25%;
+    height: 100%;
+    background-color: var(--c);
+    transform: translateY(150%);
+    border-radius: 50%;
+    left: calc((var(--n) - 1) * 25%);
+    transition: 0.5s;
+    transition-delay: calc((var(--n) - 1) * 0.1s);
+    z-index: -1;
+}
+
+nav ul  li button:hover {
+    color: #97C6E3;
+}
+
+nav ul li:hover button span {
+    transform: translateY(0) scale(2);
+}
+
+nav ul li button span:nth-child(1) {
+    --n: 1;
+}
+
+nav ul li button span:nth-child(2) {
+    --n: 2;
+}
+
+nav ul li button span:nth-child(3) {
+    --n: 3;
+}
+
+nav ul li button span:nth-child(4) {
+    --n: 4;
+}
