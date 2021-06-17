@@ -1,5 +1,7 @@
 <?php
-class User{
+require_once "Model.php";
+
+class User extends Model{
     private $firstName;
     private $secondName;
     private $thirdName;
@@ -44,14 +46,13 @@ public function getGender(){
 }
 
 public function addUser($fN, $sN, $tN, $foN, $nN, $bD, $g, $t){
-    include 'dB.php';
     $this->setData($fN, $sN, $tN, $foN, $nN, $bD, $g, $t);
     if($this->validationDataStudent()){
         echo '<script>alert("Error, data has been inserted before")</script>';
         return;
     }
-    else{
-    mysqli_query($conn, "INSERT INTO Registration (firstName, secondName, thirdName, forthName, email, nationalNumber, birthDate, gender, user)
+    else{ 
+    mysqli_query($this->db->getConn(), "INSERT INTO Registration (firstName, secondName, thirdName, forthName, email, nationalNumber, birthDate, gender, user)
     VALUES
     ('$this->firstName', '$this->secondName', '$this->thirdName', '$this->fourthName', '".$this->getEmail()."', '".md5($this->nationalNumber)."', '$this->birthDate', '$this->gender', '$this->type')");
     echo '<script>alert("Done, data have been saved successfully. You can log in now")</script>';
@@ -59,15 +60,14 @@ public function addUser($fN, $sN, $tN, $foN, $nN, $bD, $g, $t){
   }
 }
 public function logIn($email, $pass){
-    include "dB.php";
+    parent::connect();
     if($email == '' || $pass == ''){
         echo '<script>alert("Error, please fill in all the requirements")</script>';
         return;
     }
     
     else{
-        session_start();  
-        $sql = mysqli_query($conn, "SELECT email, nationalNumber, user, firstName, secondName FROM Registration WHERE email='$email' 
+        $sql = mysqli_query($this->db->getConn(), "SELECT email, nationalNumber, user, firstName, secondName FROM Registration WHERE email='$email' 
         AND nationalNumber= '".md5($pass)."'");
         if($row = mysqli_fetch_assoc($sql)){
             if($row['email'] == $email){
@@ -78,16 +78,16 @@ public function logIn($email, $pass){
                 header('Location: studentFrontEnd.php');
             }
            else if ($row['user'] == 2){
-            header('Location: teacherFrontEnd.php');
+            //header('Location: teacherFrontEnd.php');
         }
            else if ($row['user'] == 3){
-            header('Location: studentAffairesFrontEnd.php');
+            //header('Location: studentAffairesFrontEnd.php');
            }  
            else if ($row['user'] == 4){
-            header('Location: personal.php');
+            //header('Location: personal.php');
         }
-        else if ($row['user'] == 5)
-        header('location: topAdmin.php');
+        else if ($row['user'] == 5){
+            //header('location: topAdmin.php');
          }
         }
           else{
@@ -97,6 +97,7 @@ public function logIn($email, $pass){
           }
           
         }
+    }
 }
 
 private function getEmail(){
@@ -117,8 +118,7 @@ protected function validationDataStudent(){
     else if (strlen($this->nationalNumber) >= 15 || strlen($this->nationalNumber) <= 13){
         return $flag;
     }
-    include "dB.php";   
-    $sql = mysqli_query($conn, "SELECT nationalNumber, email FROM Registration");
+    $sql = mysqli_query($this->db->getConn(), "SELECT nationalNumber, email FROM Registration");
     while($row = mysqli_fetch_array($sql)){
         if($row['nationalNumber'] == $this->nationalNumber){
             return $flag;

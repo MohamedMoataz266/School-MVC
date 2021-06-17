@@ -1,6 +1,5 @@
 <?php
 require_once "View.php";
-
 class viewLogIn extends View{
     public function output(){
         ?>
@@ -23,7 +22,7 @@ class viewLogIn extends View{
 				<div class="login100-pic js-tilt" data-tilt>
 					<img src="images/banner_img.png" alt="IMG">
 				</div>
-							<form class="login100-form validate-form" action="" method="POST">
+			<form class="login100-form validate-form" action="<?php echo URLROOT;?>public/login.php" method="POST">
 					<span class="login100-form-title">
 						Welcome To Amoun
 					</span>
@@ -63,7 +62,6 @@ class viewLogIn extends View{
 		</div>
 	</div>
 <?php 
-    require_once '../app/model/logIn.php';
     }
 }
 
