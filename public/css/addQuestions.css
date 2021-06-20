@@ -11,16 +11,22 @@ body{
   }
   .register{
     overflow-y: scroll;
-    transform: translate(100%, 100%);
+    transform: translate(5%, 5%);
     background-color: black;
-    width: 500px;
-    height: 200px;
+    width: 80%;
+    height: 80%;
     text-align: center;
   }
   .section{
     transform: translate(-53%,0%);
   }
-  
+  img
+    {
+      width: 30%;
+height: 60%;
+
+
+    }
 
   .register input[type="text"]
   {
@@ -29,18 +35,34 @@ body{
     border-bottom: 1px solid #fff;
     background:transparent;
     outline: none;
-    height: 40px;
+    height: 10%;
+    width: 80%;
     color:white;
   }
+
+span{
+
+  color: #97C6E3;
+  font-size: 30px;
+  cursor: pointer;
+
+}
 
 
   .register input[type="submit"]
 {
 border:none;
 outline: none;
-height: 40px;
-background:blue;
-color:#fff;
+height: 10%;
+width: 50%;
+background:white;
+color:black;
 font-size: 18px;
 transform: translate(0%,40%);
+border-radius: 30px;
 } 
+.register input[type="submit"]:hover{
+  background-color:#B0BBC5;
+    color:black;
+    transition-duration: 0.5s;
+}

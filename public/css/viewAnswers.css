@@ -5,12 +5,21 @@ body{
    overflow: auto;
    font-family: sans-serif;
    color:white;
+   background-color: #05243A;
    overflow-y: hidden;
    
 }
+img
+    {
+      width: 30%;
+height: 60%;
+
+
+    }
+
 .register{
 
-background: rgb(0,0,0,0.5);
+
 background-position: center; 
 height: 1000px;
 }

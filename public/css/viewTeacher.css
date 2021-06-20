@@ -1,0 +1,20 @@
+.bootstrap-tagsinput {
+    width: 100%;
+   }
+   body
+   {
+       color:white;
+       background-color: #05243A;
+   }
+   .t{
+     background-color: black;
+   }
+   .table-hover tbody tr:hover td, .table-hover tbody tr:hover th { 
+   background-color: black; } 
+
+   img{
+       width: 2cm;
+       height: 2cm;
+   }
+
+   

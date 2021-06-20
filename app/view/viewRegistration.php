@@ -35,7 +35,7 @@ class viewRegistration extends View{
                 <div class="card-heading"></div>
                 <div class="card-body">
                     <h2 class="title">Welcome To Amoun</h2>
-                    <form method="POST">
+                    <form method="POST" action='<?php ob_start(); echo URLROOT; ?>public/registration.php'>
                         <div class="input-group">
                             <input class="input--style-3" type="text" placeholder="First Name" name="fN">
                              
@@ -100,7 +100,6 @@ class viewRegistration extends View{
 </html>
 
 <?php 
-    require_once '../app/model/Registration.php';
     }
 }
 

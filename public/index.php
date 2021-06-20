@@ -8,7 +8,7 @@ require_once '../app/view/viewHomePage.php';
 
 $model = new homePage();
 $controller = new homePageController($model);
-$view = new viewHomePage($controller, $model);
+$view = new viewHomePage($model, $controller);
 $view->output();
 
 ?>

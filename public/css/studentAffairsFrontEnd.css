@@ -1,0 +1,28 @@
+img{
+    width: 2cm;
+    height: 2cm;
+}
+strong
+{
+color: #A8DDFD;
+}
+body{
+  margin: 0;
+  padding: 0;
+  background-color:#05243A; 
+  background-size: cover;
+  color: white;
+}
+.register
+{
+ width:150px;
+height:150px;
+background:black;
+color:white;
+top:70%;
+left: 50%;
+position: absolute;
+transform: translate(-50%,-80%);
+text-align: center;
+padding: 70px 30px;
+}

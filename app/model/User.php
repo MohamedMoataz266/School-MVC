@@ -46,6 +46,7 @@ public function getGender(){
 }
 
 public function addUser($fN, $sN, $tN, $foN, $nN, $bD, $g, $t){
+    parent::connect();
     $this->setData($fN, $sN, $tN, $foN, $nN, $bD, $g, $t);
     if($this->validationDataStudent()){
         echo '<script>alert("Error, data has been inserted before")</script>';
@@ -56,7 +57,7 @@ public function addUser($fN, $sN, $tN, $foN, $nN, $bD, $g, $t){
     VALUES
     ('$this->firstName', '$this->secondName', '$this->thirdName', '$this->fourthName', '".$this->getEmail()."', '".md5($this->nationalNumber)."', '$this->birthDate', '$this->gender', '$this->type')");
     echo '<script>alert("Done, data have been saved successfully. You can log in now")</script>';
-    header('Location:logIn.php');  
+    header('Location:login.php');  
   }
 }
 public function logIn($email, $pass){
@@ -105,6 +106,7 @@ private function getEmail(){
 }
 
 protected function validationDataStudent(){
+    parent::connect();
     $flag = true;
     if($this->firstName == '' || 
        $this->secondName == '' || 

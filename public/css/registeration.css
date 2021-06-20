@@ -67,6 +67,11 @@ body {
 
 }
 
+img{
+  width: 2cm ;
+height: 2cm;
+}
+
 .wrapper--w960 {
   max-width: 960px;
 }
@@ -370,7 +375,7 @@ a:hover {
 }
 
 .card-3 .card-heading {
-  background: url("../images/banner_img.png") top/cover no-repeat;
+  background: url("Images/banner_img.png") top/cover no-repeat;
   display: table-cell;
   width: 50%;
 }

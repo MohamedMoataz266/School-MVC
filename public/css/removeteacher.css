@@ -73,6 +73,12 @@ a{
 }
 
 a:hover{
-  background-color:white;
-  color:#4A99E0;
+  background-color:#05243A;
+  color:white;
+}
+
+
+img{
+  width: 2cm;
+  height: 2cm;
 }

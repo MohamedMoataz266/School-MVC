@@ -8,11 +8,12 @@ class viewLogIn extends View{
 <head>		
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <?php require APPROOT.'/model/homemenu.php'; ?>
-<script src='<?php echo URLROOT; ?>public/js/menu.js'></script>
 <title>Log In</title>
 <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 <script src="<?php echo URLROOT; ?>public/js/logIn.js"></script>
 <link rel="stylesheet" href="<?php echo URLROOT;?>public/css/logIn.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script src='<?php echo URLROOT; ?>public/js/menu.js'></script>
 </head>
 <body onload='homePage()'>
 

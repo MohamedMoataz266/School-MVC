@@ -1,22 +1,28 @@
 body{
   margin: 0;
   padding: 0;
-  background-size: cover;
+  background-color: #05243A;
   font-family: sans-serif;
   color:gray;
   overflow-x:hidden
 
 }
+img
+    {
+      width: 30%;
+height: 60%;
 
+
+    }
 .register
 {
-background-color: rgb(0, 0, 0, 0.6);
+background-color:black;
 color:#fff;
 background-position: center; 
 top:50%;
 left: 50%;
 right: 50%;
-transform: translate(0%,100%);
+transform: translate(0%,50%);
 padding: 3px 30px;
 text-align: center;
 }

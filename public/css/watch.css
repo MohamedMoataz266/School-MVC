@@ -2,6 +2,7 @@ body{
     margin:0;
     padding:0;
     background-color:#05243A;
+    overflow-x: hidden;
 }
 
 h1{
@@ -9,15 +10,18 @@ h1{
     transform: translate(35%,25%);
 }
 
+img
+    {
+width: 30%;
+height: 60%;
 
+
+    }
 .watch{
     transform: translate(30%,30%);
     
 }
-img{
-    width: 60%;
-    height: 60%;
-}
+
 
 button{
     background-color:white;

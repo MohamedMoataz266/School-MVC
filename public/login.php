@@ -7,7 +7,7 @@ require_once '../app/model/User.php';
 
 $model = new User();
 $controller = new userController($model);
-$view = new viewLogIn($controller, $model);
+$view = new viewLogIn($model, $controller);
 $view->output();
 $controller->submit();
 

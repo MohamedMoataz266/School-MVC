@@ -5,10 +5,17 @@ body{
   font-family: sans-serif;
   color:white;
   overflow-x: hidden;
-  
+   background-color: #05243A;
   
   
 }
+img
+    {
+      width: 30%;
+height: 60%;
+
+
+    }
 .box{
   
   margin-top: -100px;

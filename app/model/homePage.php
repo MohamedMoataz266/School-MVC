@@ -3,48 +3,57 @@ require_once "Model.php";
 
 class homePage extends Model{
 
+    public function make_query(){
+     parent::connect();   
+     $query = "SELECT * FROM banner ORDER BY banner_id ASC";
+     $result = mysqli_query($this->db->getConn(), $query);
+     return $result;
+    }
 
 public function make_slide_indicators(){
- $output = ''; 
+parent::connect();    
  $count = 0;
- $result = mysqli_query($this->db->getConn(), "SELECT * FROM banner ORDER BY banner_id ASC");
+ $result = $this->make_query();
  while($row = mysqli_fetch_array($result)){
   if($count == 0){
-   $output .= '
-   <li data-target="#dynamic_slide_show" data-slide-to="'.$count.'" class="active"></li>';
+      ?>
+   <li data-target="#dynamic_slide_show" data-slide-to="'.$count.'" class="active"></li>
+  <?php
   }
   else{
-   $output .= '<li data-target="#dynamic_slide_show" data-slide-to="'.$count.'"></li>';
+      ?>
+   <li data-target="#dynamic_slide_show" data-slide-to="'.$count.'">
+   <?php
   }
   $count = $count + 1;
- }
- return $output;
+  }
 }
 
 public function make_slides(){
- $output = '';
+parent::connect();    
  $count = 0;
- $result = mysqli_query($this->db->getConn(), "SELECT * FROM banner ORDER BY banner_id ASC");
+ $result = $this->make_query();
 
  while($row = mysqli_fetch_array($result)){
   if($count == 0){
-   $output .= '<div class="item active">';
+      ?>
+   <div class="item active">
+  <?php
   }
   else{
-   $output .= '<div class="item">';
-  }
-  $output .= '
-   <img src="Images/'.$row["banner_image"].'" alt="'.$row["banner_title"].'" />
-   <div class="carousel-caption">
-    <h3>'.$row["banner_title"].'</h3>
+      ?>
+    <div class="item">
+    <img src='<?php echo URLROOT; ?>public/images/<?php echo $row['banner_image']; ?>' alt='<?php echo $row['banner_image']; ?>'>
+    <div class="carousel-caption">
+     <h3><?php echo $row["banner_title"] ?></h3>
+    </div>
    </div>
-  </div>
-  ';
-  $count = $count + 1;
- }
- return $output;
+     <?php
 }
-
+  
+  $count = $count + 1;
+  }
+ }
 }
 
 
