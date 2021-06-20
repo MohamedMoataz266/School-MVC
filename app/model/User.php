@@ -85,7 +85,7 @@ public function logIn($email, $pass){
             //header('Location: studentAffairesFrontEnd.php');
            }  
            else if ($row['user'] == 4){
-            //header('Location: personal.php');
+            header('Location: personnel.php');
         }
         else if ($row['user'] == 5){
             //header('location: topAdmin.php');
