@@ -4,6 +4,6 @@
     define('DB_PASS', "");
     define('DB_DATABASE', "School");
     define('APPROOT', dirname(dirname(__FILE__)));
-    define('URLROOT', 'http://localhost/dashboard/W/School-MVC/');
+    define('URLROOT', 'http://localhost/School-MVC/');
 
  ?>
