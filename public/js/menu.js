@@ -41,7 +41,7 @@ function videoMenu(){
 function studentAffairsMenu(){
     $.get("../app/model/homemenu.php", function(data){
         $(".home").replaceWith('<a href="studentAffairesFrontEnd.php">Home</a>');
-        $(".atr1").replaceWith('<a href="AddStudent.php">Add Student</a>');
+        $(".atr1").replaceWith('<a href="addStudent.php">Add Student</a>');
         $(".atr2").replaceWith('<a href="removestudent.php">Remove Student</a>');
         $(".atr3").replaceWith('<a href="viewStudentsStudentAffairs.php">View Students</a>');
         $(".atr4").replaceWith('<a href="logout.php">Log Out</a>');

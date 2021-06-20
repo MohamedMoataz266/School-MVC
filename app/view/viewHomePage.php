@@ -16,12 +16,12 @@ class viewHomePage extends View{
   <link rel="stylesheet" href="<?php echo URLROOT; ?>public/css/slideshow.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
   <script src='<?php echo URLROOT; ?>public/js/menu.js'></script>
-
+  <?php require APPROOT.'/model/homemenu.php';?>
   
 </head>
 <body onload='homePage()'>
 
-<?php require APPROOT.'/model/homemenu.php';?>
+
 <br />
   <label for="nav-toggle" class="icon-burger">
         <div class="line">
