@@ -43,7 +43,7 @@ function studentAffairsMenu(){
         $(".home").replaceWith('<a href="studentAffairesFrontEnd.php">Home</a>');
         $(".atr1").replaceWith('<a href="addStudent.php">Add Student</a>');
         $(".atr2").replaceWith('<a href="removeStudent.php">Remove Student</a>');
-        $(".atr3").replaceWith('<a href="viewStudentsStudentAffairs.php">View Students</a>');
+        $(".atr3").replaceWith('<a href="viewStudents.php">View Students</a>');
         $(".atr4").replaceWith('<a href="logout.php">Log Out</a>');
     });
 }
