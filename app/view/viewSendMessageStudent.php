@@ -1,9 +1,10 @@
-<?php require_once "View.php";
+<?php 
+require_once 'View.php';
 require_once '../app/model/sendMessageStudent.php';
 
 class viewSendMessageStudent extends View{
     public function output(){
-
+$view = new sendMessageStudent();
 ?>
 
 <html>
@@ -13,6 +14,7 @@ class viewSendMessageStudent extends View{
   <link href="<?php echo URLROOT; ?>public/css/message.css" rel="stylesheet" media="all">
 
 <div class="wrapper">
+
 <?php require APPROOT.'/model/homemenu.php'; ?>
 
 
@@ -23,7 +25,7 @@ class viewSendMessageStudent extends View{
 <div class="main_container">
 <div class="item"> 
 
-<form method="POST" action="">
+<form method="POST" action='<?php echo URLROOT; ?>public/sendMessageStudent.php'>
 <div class="box">  
 <h1>send Message</h1>
 
@@ -36,12 +38,12 @@ class viewSendMessageStudent extends View{
    <input type="text" name="R" class= 'to' readonly value="<?php echo $_GET['!?']; ?>">
     </h4>
   <div class="rec">
-  <?php $messageto = viewStudentChat(); ?>
+  <?php echo $view->viewStudentChat(); ?>
 
 
  
 </p>
-<?php $messagefrom = viewTeacherChat() ?>
+<?php  echo $view->viewTeacherChat(); ?>
  </p>
 
 
@@ -57,6 +59,9 @@ class viewSendMessageStudent extends View{
   </form>
 </body>
 </html>
+
+
+
 
 <?php
 }

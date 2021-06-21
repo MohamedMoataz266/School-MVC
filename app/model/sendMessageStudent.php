@@ -1,9 +1,10 @@
 <?php
 require_once 'Model.php';
-class sendMessageStudent extends Model{
+require_once 'Chatting.php';
+class sendMessageStudent extends Chatting{
     public function viewStudentChat(){
         parent::connect();
-        $result = mysqli_query($conn, "SELECT * FROM Chat WHERE Sender='".$_SESSION['email']."'");
+        $result = mysqli_query($this->db->getConn(), "SELECT * FROM Chat WHERE Sender='".$_SESSION['email']."'");
  // output data of each sender
  echo '<p class="send">';
 while($row = mysqli_fetch_array($result)){
@@ -16,8 +17,8 @@ while($row = mysqli_fetch_array($result)){
     }
 
     public function viewTeacherChat(){
-    parent::connnect();
-    $result = mysqli_query($conn, "SELECT * FROM Chat WHERE Receiver='".$_SESSION['email']."'");
+    parent::connect();
+    $result = mysqli_query($this->db->getConn(), "SELECT * FROM Chat WHERE Receiver='".$_SESSION['email']."'");
 // output data of each receiver
 echo '<p class="rece">';
 while($row = mysqli_fetch_array($result)){

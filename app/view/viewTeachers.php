@@ -22,7 +22,7 @@ class viewTeachers extends View{
 <form method="POST" action="">
 <div class="register">
 <?php $message->viewTeachers(); ?>
-<a href="sendMessageStudent.php?!?=<?php echo $e; ?>" class="u">Send Message</a>
+
 </div>
 </form>
 </div>

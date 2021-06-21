@@ -6,7 +6,7 @@ abstract class  View{
     public function __construct($model, $controller) {
         $this->controller = $controller;
         $this->model = $model;
-    }	
+    }
     public abstract function output();
 }
 ?>
