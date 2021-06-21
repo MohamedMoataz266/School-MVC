@@ -2,7 +2,7 @@
 require_once '../app/db/config.php';
 require_once '../app/model/viewMessageStudent.php';
 require_once '../app/view/viewMessageStudent.php';
-require_once '../app/Controller/sendMessageStudentController.php';
+require_once '../app/controller/sendMessageStudentController.php';
 
 
 

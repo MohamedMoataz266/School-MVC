@@ -2,7 +2,6 @@
 require_once "View.php";
 require_once '../app/model/viewMessageStudent.php';
 
-
 class viewMessageStudent extends View{
     public function output(){
         $view = new viewMessagesStudent();
