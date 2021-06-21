@@ -1,5 +1,5 @@
 <?php
-include "User.php";
+require_once "User.php";
 class Student extends User{
     private $nationality;
     private $religion;

@@ -33,7 +33,7 @@ function videoMenu(){
         $(".home").replaceWith('<a href="teacherFrontEnd.php">Home</a>');
         $(".atr1").replaceWith('<a href="addVideo.php">Add Video</a>');
         $(".atr2").replaceWith('<a href="deleteVideo.php">Delete Video</a>');
-        $(".atr3").replaceWith('<a href="">Update Video</a>');
+        $(".atr3").replaceWith('<a href="updateVideo.php">Update Video</a>');
     });
 }
 function studentAffairsMenu(){
