@@ -1,6 +1,5 @@
 <?php
 require_once "View.php";
-require_once '../app/model/homePage.php';
 class viewaddStudent extends View{
     public function output(){
    ?>

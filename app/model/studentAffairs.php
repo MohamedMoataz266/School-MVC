@@ -47,6 +47,26 @@ class studentAffairs extends Model{
 
     echo '<script>alert("Done, Data Updated Successfully")</script>';
     return;
-}   
+  }
+  public function viewTable(){
+    parent::connect();
+    $result = mysqli_query($this->db->getConn(), "SELECT * FROM Students");
+    while($row = mysqli_fetch_array($result)){
+      $id = $row['ID'];  
+      $name=$row['name'];
+      $registrationNumber=$row['registrationNumber'];
+      $religion=$row['religion'];
+    ?>
+      <br><br>
+      <tr>
+      <td style="visibility:hidden;"><?= $id ?></td>
+      <td><?= $name ?></td>
+      <td><?= $registrationNumber?></td>
+      <td><?= $religion ?></td>
+      <td> <input type='checkbox' name='delete[]' value='<?= $id ?>' ></td>
+    </tr>
+    <?php    
+    }
+  }   
 }
 ?>

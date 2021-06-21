@@ -1,6 +1,5 @@
 <?php
 require_once '../app/db/config.php';
-
 require_once '../app/model/studentAffairs.php';
 require_once '../app/controller/addStudentController.php';
 require_once '../app/view/viewAddStudent.php';

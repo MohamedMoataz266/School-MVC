@@ -12,7 +12,15 @@ class Message extends Model{
           <p style="visibility:hidden;"><?= $id ?></p>
           <?php
                  echo "Email: " .$e. "<br>"; 
+
+                 ?>
+                 
+                 <a href="sendMessageStudent.php?!?=<?php echo $e; ?>" class="u">Send Message</a>
+                 
+                  <?php
     }
   }
+
+  
 }
 ?>
