@@ -7,7 +7,7 @@ body{
 
 h1{
     color:white;
-    transform: translate(35%,25%);
+    transform: translate(3%,-100%);
 }
 
 img
@@ -18,7 +18,7 @@ height: 60%;
 
     }
 .watch{
-    transform: translate(30%,30%);
+    transform: translate(30%,60%);
     
 }
 
