@@ -6,7 +6,7 @@ class viewTeachers extends View{
         $message = new Message();
      ?>
      <html>
-<?php include "homemenu.php"; ?>
+<?php require APPROOT .'/model/homemenu.php' ?>
 
 <head>
 <title>Send Message</title>
