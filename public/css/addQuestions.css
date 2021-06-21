@@ -11,7 +11,7 @@ body{
   }
   .register{
     overflow-y: scroll;
-    transform: translate(5%, 5%);
+    transform: translate(20%, 20%);
     background-color: black;
     width: 80%;
     height: 80%;
