@@ -82,7 +82,7 @@ public function logIn($email, $pass){
             header('Location: teacherFrontEnd.php');
         }
            else if ($row['user'] == 3){
-            header('Location: studentAffaireSsFrontEnd.php');
+            header('Location: studentAffairesFrontEnd.php');
            }  
            else if ($row['user'] == 4){
             //header('Location: personal.php');
