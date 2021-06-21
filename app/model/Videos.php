@@ -56,7 +56,7 @@ public function video($id){
     parent::connect();
     $res=mysqli_query($this->db->getConn(), "SELECT video from addcoursevideo where id='$id'");
     $row = mysqli_fetch_assoc($res);
-    $video=$row['video'];
+    $video= $row['video'];
     return $video;
 }    
 

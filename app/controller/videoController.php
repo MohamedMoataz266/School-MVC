@@ -20,5 +20,13 @@ public function Back(){
         header('Location: videoStudents.php');
     }
   }
+public function Add(){ 
+  if(isset($_POST['insert'])){
+    $this->model->setData($_POST['course'], $_POST['videoname'], $_POST['video'] );
+    $this->model->addVideo($_SESSION['email'],$_POST['course'], $_POST['videoname'], $_POST['video']); 
+  }
+}
+
+
 }
 ?>
