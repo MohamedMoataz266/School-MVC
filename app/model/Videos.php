@@ -38,6 +38,7 @@ public function addVideo($email, $course, $videoName, $video){
     VALUES ('$email', '$this->course', '$this->videoName', '$this->video')");
 }
 public function removeVideo($id){
+    parent::connect();
     mysqli_query($this->db->getConn(), "DELETE FROM addcoursevideo WHERE ID='$id'");
     echo '<script>alert("Done, Videos Removed Successfully")</script>';
     return;
@@ -59,7 +60,29 @@ public function video($id){
     $video= $row['video'];
     return $video;
 }    
-
+public function viewDeleteVideo(){
+    parent::connect();
+  $result = mysqli_query($this->db->getConn(), "SELECT * FROM addcoursevideo");
+  
+  // output data of each row
+  while($row = mysqli_fetch_array($result)){
+    $id = $row['ID'];  
+    $email=$row['email'];
+    $course=$row['course'];
+    $video=$row['video'];
+  $videoname=$row['videoname'];
+  ?>
+  <br><br>
+    <td style="visibility:hidden;"><?= $id ?></td>
+    <td><?= $email ?></td>
+    <td><?= $course ?></td>
+    <td><?= $video ?></td>
+    <td><?= $videoname ?></td>
+    <td> <input type='checkbox' name='delete[]' value='<?= $id ?>' ></td>
+  </tr>
+  <?php
+  }
+}
 public function viewVideos(){
    parent::connect(); 
   $result = mysqli_query($this->db->getConn(), "SELECT * FROM addcoursevideo");

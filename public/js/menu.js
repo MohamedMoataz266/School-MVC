@@ -34,7 +34,7 @@ function videoMenu(){
     $.get("../app/model/homemenu.php", function(data){
         $(".home").replaceWith('<a href="teacherFrontEnd.php">Home</a>');
         $(".atr1").replaceWith('<a href="addVideo.php">Add Video</a>');
-        $(".atr2").replaceWith('<a href="deletevideocourse.php">Delete Video</a>');
+        $(".atr2").replaceWith('<a href="deleteVideo.php">Delete Video</a>');
         $(".atr3").replaceWith('<a href="">Update Video</a>');
     });
 }
