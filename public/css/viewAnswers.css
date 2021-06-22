@@ -7,19 +7,12 @@ body{
    color:white;
    background-color: #05243A;
    overflow-y: hidden;
-   
 }
-img
-    {
-      width: 30%;
-height: 60%;
-
-
-    }
-
+img{
+   width: 30%;
+   height: 60%;
+}
 .register{
-
-
 background-position: center; 
 height: 1000px;
 }
@@ -35,7 +28,7 @@ transform: translate(-22%,0%);
 .boxone
 {
 overflow-y: scroll;
-transform: translate(80%, 30%);
+transform: translate(80%, 40%);
 background-color: black;
 width: 380px;
 height: 300px;
@@ -46,7 +39,7 @@ padding: 10px;
 {
 overflow-y: scroll;
  overflow-x: hidden;
-transform: translate(240%, -60%);
+transform: translate(240%, -40%);
 background-color: black;
 width: 380px;
 height: 500px;
@@ -57,20 +50,16 @@ padding: 10px;
 }
 
 input[type="text"]{
-   
    margin: 10px;
    width: 350px;
    border:none;
-border-bottom: 1px solid #fff;
-background:transparent;
-outline: none;
-color:white;
-text-align: center;
-
-
+   border-bottom: 1px solid #fff;
+   background:transparent;
+   outline: none;
+   color:white;
+   text-align: center;
 }
 
 input[type="email"]{
 text-align: center;
-
 }
