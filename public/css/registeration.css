@@ -375,7 +375,7 @@ a:hover {
 }
 
 .card-3 .card-heading {
-  background: url("Images/banner_img.png") top/cover no-repeat;
+  background: url("../images/banner_img.png") top/cover no-repeat;
   display: table-cell;
   width: 50%;
 }
