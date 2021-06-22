@@ -6,20 +6,17 @@ $(document).ready(function(){
        url:"../app/model/Videos.php",
        method:"POST",
        data:{query:query},
-       success:function(data)
-       {
+       success:function(data){
         $('#result').html(data);
        }
       });
      }
      $('#search_text').keyup(function(){
       var search = $(this).val();
-      if(search != '')
-      {
+      if(search != ''){
        load_data(search);
       }
-      else
-      {
+      else{
        load_data();
       }
      });
