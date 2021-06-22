@@ -3,7 +3,7 @@ $(document).ready(function(){
     
      function load_data(query){
       $.ajax({
-       url:"../app/model/Videos.php",
+       url:"../app/controller/videoController.php",
        method:"POST",
        data:{query:query},
        success:function(data){

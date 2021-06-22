@@ -14,17 +14,9 @@ public function setData($course, $videoName, $video){
     die();
    }
 }
-public function Search(){
+public function Search($query){
     parent::connect();    
     $output = '';
-    if(isset($_POST["query"])){
-        $search = mysqli_real_escape_string($this->db->getConn(), $_POST["query"]);
-    $query = "SELECT * FROM addcoursevideo WHERE ID LIKE '%".$search."%' || course LIKE '%".$search."%'||
-        videoname LIKE '%".$search."%'";
-}
-else{
-    $query = "SELECT * FROM addcoursevideo ORDER BY ID ASC";
-}
 echo "<div class='register'>";
 $result = mysqli_query($this->db->getConn(), $query);
 if(mysqli_num_rows($result) > 0){

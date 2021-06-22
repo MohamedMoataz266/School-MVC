@@ -7,9 +7,9 @@ require_once '../app/view/viewUpdateVideo.php';
 
 
 $model = new Videos();
-$model->Search();
 $controller = new videoController($model);
 $view = new viewUpdateVideo($model, $controller);
 $view->output();
+$controller->getSearch();
 
 ?>
