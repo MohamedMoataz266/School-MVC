@@ -49,7 +49,7 @@ function personnelMenu(){
     $.get("../app/model/homemenu.php", function(data){
         $(".home").replaceWith('<a href="personnel.php">Home</a>');
         $(".atr1").replaceWith('<a href="AddProfession.php">Add Employee</a>');
-        $(".atr2").replaceWith('<a href="removeteacher.php">Remove Employee</a>');
+        $(".atr2").replaceWith('<a href="removeEmployee.php">Remove Employee</a>');
         $(".atr3").replaceWith('<a href="viewteachers.php">View Employee</a>');
         $(".atr4").replaceWith('<a href="logout.php">Log Out</a>');
     });
