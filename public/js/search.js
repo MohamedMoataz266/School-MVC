@@ -6,7 +6,7 @@ $(document).ready(function(){
        url:"../app/model/Videos.php",
        method:"POST",
        data:{query:query},
-       success:function(Search)
+       success:function(data)
        {
         $('#result').html(data);
        }

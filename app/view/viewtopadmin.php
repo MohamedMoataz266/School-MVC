@@ -7,9 +7,9 @@ class viewtopadmin{
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <script src='<?php echo URLROOT; ?>public/js/menu.js'></script>
 
-<link href="<?php echo URLROOT; ?>public/css/topadmin.css" rel="stylesheet" media="all">
+<link href="<?php echo URLROOT; ?>public/css/topAdmin.css" rel="stylesheet" media="all">
 <div class="image">
-<img src="Images/amoun.jpeg" alt="">
+<img src="<?php echo URLROOT; ?>public/images/amoun.jpeg" alt="">
 </div>
 <div class="container">
 <nav>
@@ -22,7 +22,7 @@ class viewtopadmin{
       Student Affairs Side
       <span></span><span></span><span></span><span></span>
     </button></li>
-    <li><button onclick="window.location.href='personal.php'">
+    <li><button onclick="window.location.href='personnel.php'">
       Personnal Side
       <span></span><span></span><span></span><span></span>
     </button></li>
