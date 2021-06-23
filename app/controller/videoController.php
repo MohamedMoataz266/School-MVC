@@ -29,6 +29,7 @@ public function Add(){
 public function getSearch(){
   if(isset($_POST["search_text"])){
     $this->model->Search($_POST['search_text']);
+    header('Refresh: 4.0');
  }
  if(!isset($_POST['search_text'])){
    $this->model->Search('');
