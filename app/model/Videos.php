@@ -26,7 +26,7 @@ if(mysqli_num_rows($result) > 0){
                 <h4><?php echo "Course: " .$row["course"] ?></h4>
                 <h4><?php echo "VideoName: " .$row["videoname"] ?></h4>
                 <h4><?php echo "Video: " .$row["video"] ?></h4>
-                <a href= "updatethevideo.php?<!?>=<?php echo $row['ID']+255?>">View</a><br>
+                <a href= "updateSelectedVideo.php?<!?>=<?php echo $row['ID']+255?>">View</a><br>
                 </div>
                 <br>
     <?php
@@ -37,6 +37,19 @@ else{
 }
 echo "</div>";
  }
+public function viewUpdate($id){
+parent::connect();
+$sql = "SELECT * FROM addcoursevideo WHERE ID='".$id."'-255";
+$result = mysqli_query($this->db->getConn(), $sql);
+
+if($result){
+   $row = mysqli_fetch_array($result);
+   $ar['a'] = $row['course'];
+   $ar['b'] = $row['video'];
+   $ar['c'] = $row['videoname'];
+   return $ar;
+  }
+} 
 private function validateData(){
     $flag = true;
     if($this->course == '' || $this->videoName == '' || $this->video == ''){
@@ -67,15 +80,17 @@ public function removeVideo($id){
     return;
 }
 public function updateVideo($id, $course, $videoName, $video){
-    parent::conect();
-    mysqli_query($conn, "UPDATE addcoursevideo SET course='$course', 
+    parent::connect();
+    mysqli_query($this->db->getConn(), "UPDATE addcoursevideo SET course='$course', 
                                                 videoname='$videoName', 
                                                 video='$video' 
                                                 WHERE email='".$_SESSION['email']."' 
                                                 AND ID='".$id."'");
     echo '<script>alert("Done, Video Updates Successfully")</script>';
+    header('Refresh: 0.1');
     return;
-    }
+    
+}
 public function video($id){
     parent::connect();
     $res=mysqli_query($this->db->getConn(), "SELECT video from addcoursevideo where id='$id'");

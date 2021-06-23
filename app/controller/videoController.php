@@ -1,7 +1,5 @@
 <?php
 require_once "Controller.php";
-require_once '../app/model/Videos.php';
-
 class videoController extends Controller{
   public function DeleteVideo(){  
     if(isset($_POST['sub'])){
@@ -29,17 +27,24 @@ public function Add(){
 }
 
 public function getSearch(){
-$video = new Videos();
   if(isset($_POST["query"])){
     $search = mysqli_real_escape_string($this->db->getConn(), $_POST["query"]);
     $query = "SELECT * FROM addcoursevideo WHERE ID LIKE '%".$search."%' || course LIKE '%".$search."%'||
     videoname LIKE '%".$search."%'";
-    $video->Search($query);
+    $this->model->Search($query);
  }
  else{
   $query = "SELECT * FROM addcoursevideo ORDER BY ID ASC";
-  $video->Search($query);
+  $this->model->Search($query);
  }
+}
+public function update(){
+  if(isset($_POST['update'])){
+    $ge=$_GET['<!?>']-255;
+    $this->model->setData($_POST['course'], $_POST['videoname'], $_POST['video'] );
+    $this->model->updateVideo($ge,$_POST['course'], $_POST['videoname'], $_POST['video']); 
+  }
+
 }
 
 
