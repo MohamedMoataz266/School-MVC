@@ -29,8 +29,12 @@ class studentAffairs extends Model{
         return;
     }
   }
-  public function updateStudent($id, $na, $nN, $bD,   $g, $n, $r, $p, $m, $a, $ph, $f, $c, $rN){
+  public function updateStudent($id, $na, $nN, $bD, $g, $n, $r, $p, $m, $a, $ph, $f, $c, $rN){
     parent::connect();
+    if($na == '' || $nN == '' || $bD == '' || $g == '' || $n == '' || $r == '' || $p == '' || $m == '' || $a == '' || $ph == '' || $f == '' || $c == '' || $rN == ''){
+      echo '<script>alert("Error Data Is Not Completed")</script>';
+      return;
+    }
    mysqli_query($this->db->getConn(), "UPDATE Students SET name='$na',
                                              registrationNumber='$rN',
                                              nationality='$n',
@@ -46,6 +50,7 @@ class studentAffairs extends Model{
                                              class='$c' WHERE ID='".$id."'");
 
     echo '<script>alert("Done, Data Updated Successfully")</script>';
+    header('Refresh: 0.1');
     return;
   }
   public function viewTable(){
@@ -81,7 +86,7 @@ if(mysqli_num_rows($result) > 0){
                 <h4><?php echo "name: " .$row["name"] ?></h4>
                 <h4><?php echo "registrationNumber: " .$row["registrationNumber"] ?></h4>
                 <h4><?php echo "religion: " .$row["religion"] ?></h4>
-                <a href= ".php?<!?>=<?php echo $row['ID']+255?>">Update</a><br>
+                <a href= "updateStudent.php?<!?>=<?php echo $row['ID']+255?>">Update</a><br>
                 </div>
                 <br>
     <?php
@@ -99,11 +104,21 @@ $result = mysqli_query($this->db->getConn(), $sql);
 
 if($result){
    $row = mysqli_fetch_array($result);
-   $ar['a'] = $row['course'];
-   $ar['b'] = $row['video'];
-   $ar['c'] = $row['videoname'];
+   $ar['a'] = $row['name'];
+   $ar['b'] = $row['registrationNumber'];
+   $ar['c'] = $row['nationality'];
+   $ar['d'] = $row['religion'];
+   $ar['e'] = $row['placeOfBirth'];
+   $ar['f'] = $row['dateOfBirth'];
+   $ar['g'] = $row['motherName'];
+   $ar['h'] = $row['address'];
+   $ar['i'] = $row['phoneNumber'];
+   $ar['j'] = $row['fatherJob'];
+   $ar['k'] = $row['gender'];
+   $ar['l'] = $row['nationalNumber'];
+   $ar['m'] = $row['class'];
    return $ar;
-  }
-} 
+   }
+ } 
 }
 ?>
