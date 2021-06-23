@@ -11,8 +11,8 @@ $view = new Chatting();
 <head>
 <title>Chatting</title>
 
-  <link href="<?php echo URLROOT; ?>public/css/message.css" rel="stylesheet" media="all">
-
+ 
+  
 <div class="wrapper">
 
 <?php require APPROOT.'/model/homemenu.php'; ?>
@@ -21,6 +21,7 @@ $view = new Chatting();
 
 
 </head>
+<link href="<?php echo URLROOT; ?>public/css/message.css" rel="stylesheet" media="all">
 <body onload='studentMenu()'>
 <div class="main_container">
 <div class="item"> 
@@ -31,9 +32,10 @@ $view = new Chatting();
 
 <br><div class="wra">
 
-
-<h4>From:<input type="text" name="S" class='from' readonly value="<?php echo $_SESSION['email']; ?>">
+<div class = "from">
+<h4>From:<input type="text" name="S" readonly value="<?php echo $_SESSION['email']; ?>">
       </h4>
+    </div>
         <h4 class='tohead'>To:
    <input type="text" name="R" class= 'to' readonly value="<?php echo $_GET['!?']; ?>">
     </h4>

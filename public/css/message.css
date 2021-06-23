@@ -46,14 +46,19 @@ height: 60%;
  
 background-color: white;
 color: black;
-transform: translate(60%, -10%);
+transform: translate(60%, -5%);
 }
-h4{
-  transform: translate(5%, -0%);
+.wra h4 {
+  transform: translate(5%, 200%);
 }
-.tohead{
-  transform: translate(80%, -180%);
+
+.from {
+  transform: translate(75%, 150%);
+  
 }
+
+
+
 h1{ margin: 10; padding: 10; text-align: center; font-size:22px; } 
 .wra input[type="submit"]
 {
@@ -70,7 +75,7 @@ h1{ margin: 10; padding: 10; text-align: center; font-size:22px; }
   transition: 0.5s;
   width: 50%;
   font-size: 18px;
-  transform: translate(55%, -190%);
+  transform: translate(55%, -105%);
 }
 input[type="submit"]:hover{
     background-color:#B0BBC5;
@@ -93,7 +98,7 @@ color: white;
 .wra textarea{
 width:49%;
 height: 20%;
-transform: translate(57%, -30%);
+transform: translate(57%, -10%);
 border-radius: 15px;
 }
 
