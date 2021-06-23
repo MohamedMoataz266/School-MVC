@@ -56,7 +56,6 @@ public function addUser($fN, $sN, $tN, $foN, $nN, $bD, $g, $t){
     mysqli_query($this->db->getConn(), "INSERT INTO Registration (firstName, secondName, thirdName, forthName, email, nationalNumber, birthDate, gender, user)
     VALUES
     ('$this->firstName', '$this->secondName', '$this->thirdName', '$this->fourthName', '".$this->getEmail()."', '".md5($this->nationalNumber)."', '$this->birthDate', '$this->gender', '$this->type')");
-    echo '<script>alert("Done, data have been saved successfully. You can log in now")</script>';
     header('Location:login.php');  
   }
 }
@@ -122,7 +121,7 @@ protected function validationDataStudent(){
     }
     $sql = mysqli_query($this->db->getConn(), "SELECT nationalNumber, email FROM Registration");
     while($row = mysqli_fetch_array($sql)){
-        if($row['nationalNumber'] == $this->nationalNumber){
+        if($row['nationalNumber'] == md5($this->nationalNumber)){
             return $flag;
         }
         if($row['email'] == $this->getEmail()){
