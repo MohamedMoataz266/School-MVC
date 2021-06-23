@@ -49,7 +49,7 @@ class Chatting extends Model{
     }
 public function updateMessage(){
         parent::connect();
-        $res = mysqli_query($this->db->getConn(), "UPDATE Chat SET messageType='Read' WHERE Sender='".$_POST['S']."' AND Receiver='".$_SESSION['email']."'");
+        $res = mysqli_query($this->db->getConn(), "UPDATE Chat SET messageType='Read' WHERE Receiver='".$_GET['!?']."' AND Sender='".$_SESSION['email']."'");
    }
  public function getNumberOfMessages(){
         parent::connect();

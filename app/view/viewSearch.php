@@ -18,7 +18,7 @@ class viewSearch     extends View{
  <?php require APPROOT.'/model/homemenu.php';?>
 
  </head>
- <body onload='studentAffairsMenu()'>
+ <body onload='teacherMenu()'>
   <div class="container">
    <br />
    <br />
