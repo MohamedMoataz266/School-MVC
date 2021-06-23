@@ -81,7 +81,7 @@ if(mysqli_num_rows($result) > 0){
                 <h4><?php echo "name: " .$row["name"] ?></h4>
                 <h4><?php echo "registrationNumber: " .$row["registrationNumber"] ?></h4>
                 <h4><?php echo "religion: " .$row["religion"] ?></h4>
-                <a href= ".php?<!?>=<?php echo $row['ID']+255?>">View</a><br>
+                <a href= ".php?<!?>=<?php echo $row['ID']+255?>">Update</a><br>
                 </div>
                 <br>
     <?php

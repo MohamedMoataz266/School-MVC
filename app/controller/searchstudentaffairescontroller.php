@@ -33,12 +33,12 @@ public function addStudent(){
 public function getSearch(){
   if(isset($_POST["query"])){
     $search = mysqli_real_escape_string($this->db->getConn(), $_POST["query"]);
-    $query = "SELECT * FROM students WHERE ID LIKE '%".$search."%' || name LIKE '%".$search."%'||
+    $query = "SELECT * FROM Students WHERE ID LIKE '%".$search."%' || name LIKE '%".$search."%'||
     registrationNumber LIKE '%".$search."%'";
     $this->model->Search($query);
  }
  else{
-  $query = "SELECT * FROM students ORDER BY ID ASC";
+  $query = "SELECT * FROM Students ORDER BY ID ASC";
   $this->model->Search($query);
  }
 }
