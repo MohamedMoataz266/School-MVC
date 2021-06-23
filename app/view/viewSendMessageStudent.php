@@ -1,10 +1,10 @@
 <?php 
 require_once 'View.php';
-require_once '../app/model/sendMessageStudent.php';
+require_once '../app/model/Chatting.php';
 
 class viewSendMessageStudent extends View{
     public function output(){
-$view = new sendMessageStudent();
+$view = new Chatting();
 ?>
 
 <html>
@@ -25,7 +25,7 @@ $view = new sendMessageStudent();
 <div class="main_container">
 <div class="item"> 
 
-<form method="POST" action='<?php echo URLROOT; ?>public/sendMessageStudent.php'>
+<form method="POST" action='<?php echo URLROOT; ?>public/sendMessageStudent.php?!?=<?php echo $_GET['!?']; ?>'>
 <div class="box">  
 <h1>send Message</h1>
 
@@ -38,12 +38,12 @@ $view = new sendMessageStudent();
    <input type="text" name="R" class= 'to' readonly value="<?php echo $_GET['!?']; ?>">
     </h4>
   <div class="rec">
-  <?php echo $view->viewStudentChat(); ?>
+  <?php echo $view->viewStudentChat($_GET['!?']); ?>
 
 
  
 </p>
-<?php  echo $view->viewTeacherChat(); ?>
+<?php  echo $view->viewTeacherChat($_GET['!?']); ?>
  </p>
 
 

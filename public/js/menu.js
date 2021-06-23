@@ -23,8 +23,8 @@ function teacherMenu(){
         $(".atr2").replaceWith('<a href="viewstudents.php">View Students</a>');
         $(".atr3").replaceWith('<a href="addVideo.php">Videos</a>');
         $(".atr4").replaceWith('<a href="answers.php">View Answers</a>');
-        $(".atr5").replaceWith('<a href="teacherMessageFrontEnd.php">Send Message</a>');
-        $(".atr6").replaceWith('<a href="viewMessagesTeacher.php">View Message</a>');
+        $(".atr5").replaceWith('<a href="sendMessageTeacher.php">Send Message</a>');
+        $(".atr6").replaceWith('<a href="viewMessageTeacher.php">View Message</a>');
         $(".atr7").replaceWith('<a href="logout.php">Log Out</a>');
     });
 }    

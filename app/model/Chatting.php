@@ -27,6 +27,86 @@ class Chatting extends Model{
             return $flag;
         }
     }
+public function viewStudentChat($id){
+        parent::connect();
+        $result = mysqli_query($this->db->getConn(), "SELECT * FROM Chat WHERE Sender='".$_SESSION['email']."' AND Receiver='".$id."'");
+ echo '<p class="send">';
+while($row = mysqli_fetch_array($result)){
+  ?>
+  <div class="message-blue">
+  <?php echo $row['message'] ?>
+</div>
+ <?php
+}
+    }
+public function viewTeacherMessages(){
+parent::connect();
+$result = mysqli_query($this->db->getConn(), "SELECT * FROM Chat WHERE Receiver='".$_SESSION['email']."' AND messageType= 'Delivered'");
+// output data of each row
+if(mysqli_num_rows($result) == 0){
+  echo "<h1>No new messages</h1>";
+}
+while($row = mysqli_fetch_array($result)){
+  $id = $row['ID'];  
+  $sender = $row['Sender'];
+  $message = $row['message'];  
+  echo "<br><br>";
+   echo "From: ".$sender. "<br>"; 
+   echo "Message: " .$message; 
+?>
+  <br><a href="sendMessageToStudent.php?!?=<?php echo $row["Sender"];?>">Reply</a>
+<?php
+}
+}
+public function viewTeacherChat($id){
+    parent::connect();
+    $result = mysqli_query($this->db->getConn(), "SELECT * FROM Chat WHERE Receiver='".$_SESSION['email']."' AND Sender='".$id."'");
+// output data of each receiver
+echo '<p class="rece">';
+while($row = mysqli_fetch_array($result)){
+  ?>
+  <div class="message-orange">
+ <?php echo $row['message'] ?> 
+  </div>
+  <?php
+  }
+}
+public function viewSend(){
+    parent::connect();
+    $result = mysqli_query($this->db->getConn(), "SELECT * FROM Registration WHERE user='1'");
+    
+    // output data of each row
+    while($row = mysqli_fetch_array($result)){
+      $id = $row['ID'];  
+      $e = $row['email'];
+      ?>
+      <br><br>
+      <p style="visibility:hidden;"><?= $id ?></p>
+      <?php
+             echo "Email: " .$e. "<br>"; 
+    ?>
+    <a href="sendMessageToStudent.php?!?=<?php echo $e; ?>" class="u">Send Message</a>
+<?php
+  }
+}
+
+public function viewStudentMessages(){
+    parent::connect();
+    $result = mysqli_query($this->db->getconn(), "SELECT * FROM Chat WHERE Receiver='".$_SESSION['email']."' AND messageType= 'Delivered'");
+    if(mysqli_num_rows($result) == 0){
+        echo "<h1>No new messages</h1>";
+}
+while($row = mysqli_fetch_array($result)){
+  $id = $row['ID'];  
+  $sender = $row['Sender'];
+  $message = $row['message'];  
+  echo "<br><br>";
+   echo "From: ".$sender. "<br>"; 
+   echo "Message: " .$message; 
+   ?>  <br><a href="sendMessageStudent.php?!?=<?php echo $row["Sender"];?>">Reply</a>
+ <?php
+    }
+}
     public function sendMessage(){
         parent::connect();
         $sql = mysqli_query($this->db->getConn(), "INSERT INTO Chat (Sender, Receiver, Message, messageType) 
@@ -49,7 +129,7 @@ class Chatting extends Model{
     }
 public function updateMessage(){
         parent::connect();
-        $res = mysqli_query($this->db->getConn(), "UPDATE Chat SET messageType='Read' WHERE Receiver='".$_GET['!?']."' AND Sender='".$_SESSION['email']."'");
+        $res = mysqli_query($this->db->getConn(), "UPDATE Chat SET messageType='Read' WHERE Receiver='".$_SESSION['email']."' AND Sender='".$_GET['!?']."'");
    }
  public function getNumberOfMessages(){
         parent::connect();

@@ -46,7 +46,7 @@ height: 60%;
  
 background-color: white;
 color: black;
-transform: translate(60%, -25%);
+transform: translate(60%, -10%);
 }
 h4{
   transform: translate(5%, -0%);
@@ -70,7 +70,7 @@ h1{ margin: 10; padding: 10; text-align: center; font-size:22px; }
   transition: 0.5s;
   width: 50%;
   font-size: 18px;
-  transform: translate(55%, -360%);
+  transform: translate(55%, -190%);
 }
 input[type="submit"]:hover{
     background-color:#B0BBC5;
@@ -93,7 +93,7 @@ color: white;
 .wra textarea{
 width:49%;
 height: 20%;
-transform: translate(57%, -90%);
+transform: translate(57%, -30%);
 border-radius: 15px;
 }
 
