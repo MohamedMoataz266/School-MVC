@@ -31,9 +31,6 @@ class viewUpdateVideo extends View{
   </form>
  </body>
 </html>
-
-
-<script src="<?php echo URLROOT; ?>public/js/search.js"></script>
         <?php
     } 
 }

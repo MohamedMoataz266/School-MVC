@@ -14,10 +14,12 @@ public function setData($course, $videoName, $video){
     die();
    }
 }
-public function Search($query){
+public function Search($que){   
     parent::connect();    
-    $output = '';
+    $output = '';  
 echo "<div class='register'>";
+$search = mysqli_real_escape_string($this->db->getConn(), $que);
+$query = "SELECT * FROM addcoursevideo WHERE course LIKE '%".$search."%'|| videoname LIKE '%".$search."%'";
 $result = mysqli_query($this->db->getConn(), $query);
 if(mysqli_num_rows($result) > 0){
         while($row = mysqli_fetch_array($result)){
@@ -31,9 +33,10 @@ if(mysqli_num_rows($result) > 0){
                 <br>
     <?php
     }
-}
-else{
+  }
+if(mysqli_num_rows($result) == 0){
     echo '<h3>Data Not Found</h3>';
+    header('Refresh: 0.7');
 }
 echo "</div>";
  }

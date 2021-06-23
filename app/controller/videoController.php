@@ -27,15 +27,11 @@ public function Add(){
 }
 
 public function getSearch(){
-  if(isset($_POST["query"])){
-    $search = mysqli_real_escape_string($this->db->getConn(), $_POST["query"]);
-    $query = "SELECT * FROM addcoursevideo WHERE ID LIKE '%".$search."%' || course LIKE '%".$search."%'||
-    videoname LIKE '%".$search."%'";
-    $this->model->Search($query);
+  if(isset($_POST["search_text"])){
+    $this->model->Search($_POST['search_text']);
  }
- else{
-  $query = "SELECT * FROM addcoursevideo ORDER BY ID ASC";
-  $this->model->Search($query);
+ if(!isset($_POST['search_text'])){
+   $this->model->Search('');
  }
 }
 public function update(){
