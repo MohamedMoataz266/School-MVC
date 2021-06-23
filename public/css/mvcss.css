@@ -1,12 +1,35 @@
-body
-{
-background-color: #05243A;
-color:white;
-
-}
+body{
+    margin: 0;
+    padding: 0;
+   color: white;
+    background-size: cover;
+    font-family: sans-serif;
+    background-color:#05243A;;
+  }
 
 .register
 {
-background-color:black;
-
+background-color: black;
+color:#fff;
+background-position: center; 
+top:50%;
+left: 50%;
+right: 50%;
+transform: translate(0%,3%);
+ padding: 3px 30px;
+ text-align: center;
 }
+
+h2{
+margin: 10;
+padding: 10;
+text-align: center;
+font-size:22px;
+}
+
+ img{
+       width: 2cm;
+       height: 2cm;
+   }
+
+   

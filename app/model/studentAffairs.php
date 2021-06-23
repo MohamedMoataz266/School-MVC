@@ -68,5 +68,42 @@ class studentAffairs extends Model{
     <?php    
     }
   }   
+
+public function Search($query){
+    parent::connect();    
+    $output = '';
+echo "<div class='register'>";
+$result = mysqli_query($this->db->getConn(), $query);
+if(mysqli_num_rows($result) > 0){
+        while($row = mysqli_fetch_array($result)){
+        ?>
+                <div class="comp">
+                <h4><?php echo "name: " .$row["name"] ?></h4>
+                <h4><?php echo "registrationNumber: " .$row["registrationNumber"] ?></h4>
+                <h4><?php echo "religion: " .$row["religion"] ?></h4>
+                <a href= ".php?<!?>=<?php echo $row['ID']+255?>">View</a><br>
+                </div>
+                <br>
+    <?php
+    }
+}
+else{
+    echo '<h3>Data Not Found</h3>';
+}
+echo "</div>";
+ }
+public function viewUpdate($id){
+parent::connect();
+$sql = "SELECT * FROM Students WHERE ID='".$id."'-255";
+$result = mysqli_query($this->db->getConn(), $sql);
+
+if($result){
+   $row = mysqli_fetch_array($result);
+   $ar['a'] = $row['course'];
+   $ar['b'] = $row['video'];
+   $ar['c'] = $row['videoname'];
+   return $ar;
+  }
+} 
 }
 ?>
