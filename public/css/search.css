@@ -1,17 +1,35 @@
-.bootstrap-tagsinput {
-    width: 100%;
-   }
-img{
-    width: 30%;
-    height: 60%;
- }
 body{
-       color:white;
-       background-color:#05243A;
+    margin: 0;
+    padding: 0;
+   color: white;
+    background-size: cover;
+    font-family: sans-serif;
+    background-color:#05243A;;
+  }
+
+.register
+{
+background-color: black;
+color:#fff;
+background-position: center; 
+top:50%;
+left: 50%;
+right: 50%;
+transform: translate(0%,3%);
+ padding: 3px 30px;
+ text-align: center;
+}
+
+h2{
+margin: 10;
+padding: 10;
+text-align: center;
+font-size:22px;
+}
+
+ img{
+       width: 2cm;
+       height: 2cm;
    }
-.t{
-     background-color: black;
-   }
-.table-hover tbody tr:hover td, .table-hover tbody tr:hover th{ 
-   background-color: black; 
-} 
+
+   

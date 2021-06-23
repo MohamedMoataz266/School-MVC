@@ -19,96 +19,23 @@ class viewSearch     extends View{
 
  </head>
  <body onload='teacherMenu()'>
+  <form method="POST">
   <div class="container">
    <br />
-   <br />
-   <br />
-   <h2 align="center">Students</h2><br />
+   <h2 align="center">Search</h2><br />
    <div class="form-group">
-    <div class="row">
-     <div class="col-md-10">
-      <input type="text" id="tags" class="form-control" data-role="tagsinput" />
-     </div>
-     <div class="col-md-2">
-      <button type="button" name="search" class="btn btn-primary" id="search">Search</button>
-     </div>
+    <div class="input-group">
+     <span class="input-group-addon">Search</span>
+     <input type="text" name="search_text" id="search_text" placeholder="Search by  Name, register number" class="form-control" />
     </div>
    </div>
    <br />
-   <div class="table-responsive">
-    <div align="right">
-     <p><b>TotalRecords: <span id="total_records"></span></b></p>
-    </div>
-    <div class="t">
-    <table class="table table-hover">
-     <thead>
-      <tr>
-       <th>Name</th>
-       <th>Address</th>
-       <th>Registration number</th>
-      </tr>
-     </thead>
-     <tbody>
-     </tbody>
-    </table>
-    </div>
-   </div>
-   </div>
-  <div style="clear:both"></div>
-  <br />
-  <br />
-  <br />
-  <br />
+   <div id="result"></div>
+  </div>
+  </form>
  </body>
 </html>
-
-
-<script>
-$(document).ready(function(){
- 
- load_data();
-
- function load_data(query){
-  $.ajax({
-   url:"viewStudents.php",
-   method:"POST",
-   data:{query:query},
-   dataType:"json",
-   success:function(data){
-    $('#total_records').text(data.length);
-    var html = '';
-    if(data.length > 0)
-    {
-     for(var count = 0; count < data.length; count++)
-     {
-      html += '<tr>';
-      html += '<td>'+data[count].name+'</td>';
-      html += '<td>'+data[count].address+'</td>';
-      html += '<td>'+data[count].registrationNumber+'</td>';
-    
-     
-     }
-    }
-    else
-    {
-     html = '<tr><td colspan="5">No Data has been found</td></tr>';
-    }
-    $('tbody').html(html);
-   }
-  })
- }
-
- $('#search').click(function(){
-  var query = $('#tags').val();
-  load_data(query);
- });
-
-});
-</script>
-
-
-   <?php
-      
-    }
+        <?php
+    } 
 }
 ?>

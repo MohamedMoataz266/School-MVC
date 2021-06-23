@@ -157,5 +157,54 @@ public function insertStudent($fiN, $sN, $tN, $fN, $nN, $bD, $g, $n, $r, $p, $m,
     $flag = false;
     return $flag;
  }
+
+
+public function updateStudent($id, $na, $nN, $bD,   $g, $n, $r, $p, $m, $a, $ph, $f, $c, $rN){
+    parent::connect();
+   mysqli_query($this->db->getConn(), "UPDATE Students SET name='$na',
+                                             registrationNumber='$rN',
+                                             nationality='$n',
+                                             religion='$r',
+                                             placeOfBirth='$p',
+                                             dateOfBirth='$bD',
+                                             motherName='$m',
+                                             address='$a',
+                                             phoneNumber='$ph',
+                                             fatherJob='$f',
+                                             gender='$g',
+                                             nationalNumber='$nN',
+                                             class='$c' WHERE ID='".$id."'");
+
+    echo '<script>alert("Done, Data Updated Successfully")</script>';
+    return;
+  }
+
+
+public function Search($que){   
+    parent::connect();    
+    $output = '';  
+echo "<div class='register'>";
+$search = mysqli_real_escape_string($this->db->getConn(), $que);
+$query = "SELECT * FROM Students WHERE name LIKE '%".$search."%'|| registrationNumber LIKE '%".$search."%'";
+$result = mysqli_query($this->db->getConn(), $query);
+if(mysqli_num_rows($result) > 0){
+        while($row = mysqli_fetch_array($result)){
+        ?>
+                <div class="comp">
+                <h4><?php echo "name: " .$row["name"] ?></h4>
+                <h4><?php echo "registrationNumber: " .$row["registrationNumber"] ?></h4>
+                <h4><?php echo "class: " .$row["class"] ?></h4>
+             <h4><?php echo "address: " .$row["address"] ?></h4>
+                </div>
+                <br>
+    <?php
+    }
+  }
+if(mysqli_num_rows($result) == 0){
+    echo '<h3>Data Not Found</h3>';
+    header('Refresh: 0.7');
+}
+echo "</div>";
+ }
 }
 ?>
