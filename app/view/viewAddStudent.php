@@ -40,7 +40,7 @@ class viewaddStudent extends View{
                          
 
                                <div class="col-md-12">
-                               <input class="form-control" type="text" name="regnumber" placeholder="Registration number">
+                               <input class="form-control" type="number" name="regnumber" placeholder="Registration number">
                                <!-- <div class="valid-feedback">Username field is valid!</div> -->
                                </div>
                                <div class="col-md-12">
