@@ -260,4 +260,32 @@ else{
 }
 echo "</div>";
  }
+
+ public function SearchView($que){   
+    parent::connect();    
+    $output = '';  
+echo "<div class='register'>";
+$search = mysqli_real_escape_string($this->db->getConn(), $que);
+$query = "SELECT * FROM personnelAffairs WHERE name LIKE '%".$search."%'|| nationalNumber LIKE '%".$search."%'";
+$result = mysqli_query($this->db->getConn(), $query);
+if(mysqli_num_rows($result) > 0){
+        while($row = mysqli_fetch_array($result)){
+        ?>
+                <div class="comp">
+                <div class="comp">
+                <h4><?php echo "Name: " .$row["name"] ?></h4>
+                <h4><?php echo "National Number: " .$row["nationalNumber"] ?></h4>
+                </div>
+                <br>
+    <?php
+    }
+  }
+if(mysqli_num_rows($result) == 0){
+    echo '<h3>Data Not Found</h3>';
+    header('Refresh: 0.7');
+}
+echo "</div>";
+ }
+}
+?>
 }?>

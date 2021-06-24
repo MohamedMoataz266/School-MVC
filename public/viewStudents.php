@@ -10,6 +10,6 @@ $model = new Student();
 $controller = new searchstudentcontroller($model);
 $view = new viewSearch($model, $controller);
 $view->output();
-$controller->getSearch();
+$controller->getSearchE();
 
 ?>
