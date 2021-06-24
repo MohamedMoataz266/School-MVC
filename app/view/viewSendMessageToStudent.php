@@ -7,12 +7,14 @@ class viewSendMessageToStudent extends View{
         ?>
         <html>
 <?php require APPROOT .'/model/homemenu.php'; ?>
-<div class="wrapper">
+
 <head>
-  <link rel="stylesheet" href="<?php echo URLROOT; ?>public/css/message.css">
+<div class="wrapper">
+  
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <script src='<?php echo URLROOT; ?>public/js/menu.js'></script>
 </head>
+<link rel="stylesheet" href="<?php echo URLROOT; ?>public/css/message.css">
 <body onload='teacherMenu()'>  
 <div class="main_container">
 <div class="item"> 
@@ -20,10 +22,12 @@ class viewSendMessageToStudent extends View{
 <div class="box">  
 <h1>Send Message</h1>
 <br><div class="wra">
-<h4>From:<input type="text" name="S" class='from' readonly value="<?php echo $_SESSION['email']; ?>">
+<div class = "from">
+<h4>From:<input type="text" name="S" readonly value="<?php echo $_SESSION['email']; ?>">
       </h4>
+      </div>
         <h4 class='tohead'>To:
-   <input type="text" name="R" readonly value="<?php echo $_GET['!?'];?>">
+   <input type="text" name="R" class="to" readonly value="<?php echo $_GET['!?'];?>">
     </h4>
   <div class="rec">
   <?php $view->viewStudentChat($_GET['!?']); ?>
