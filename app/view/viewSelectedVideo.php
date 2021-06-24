@@ -16,7 +16,7 @@ class viewSelectedVideo extends View{
         <div class="form-holder">
             <div class="form-content">
                 <div class="form-items">
-                    <h3>Update video</h3>
+                    <h3>Update Video</h3>
                    
                     <form class="requires-validation"  method='POST' action='<?php echo URLROOT; ?>public/updateSelectedVideo.php?<!?>=<?php echo $_GET['<!?>']; ?>'>
                            <div class="col-md-12">

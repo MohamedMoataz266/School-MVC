@@ -12,7 +12,7 @@ public function addProfession($eN, $c, $aN, $r, $n, $g, $bD, $nN, $fN, $addr, $p
     $flag = true;
     $sql = mysqli_query($this->db->getConn(), "SELECT ID FROM personnelAffairs WHERE ID='".$id."'");
     if(mysqli_num_rows($sql) > 0){
-      return $flag; 
+      return $flag;
     }
     $flag = false;
     return $flag;
@@ -29,9 +29,13 @@ public function addProfession($eN, $c, $aN, $r, $n, $g, $bD, $nN, $fN, $addr, $p
         return;
     }
   }  
-  public function updateProfession($id,$eN, $c, $aN, $r, $n, $g, $bD, $nN, $fN, $addr, $pN, $q, $gY, $gG, $expY, $j, $spec, $dep, $cDate, $iNo, $iDate, $iEDate, $sR, $eS, $notes){
+  public function updateEmployee($id,$eN, $c, $aN, $r, $n, $g, $bD, $nN, $fN, $addr, $pN, $q, $gY, $gG, $expY, $j, $spec, $dep, $cDate, $iNo, $iDate, $iEDate, $sR, $eS, $notes){
     parent::connect();
-    mysqli_query($this->db->getConn(), "UPDATE personnelAffairs SET name ='$ed', 
+    if($eN == '' || $c == '' || $aN == '' || $r == '' || $n == '' || $g == '' || $bD == '' || $nN == '' || $fN == '' || $addr == '' || $pN == '' || $q == '' || $gY == '' || $gG == '' || $expY == '' || $j == '' || $spec == '' || $dep == '' || $cDate == '' || $iNo == '' || $iDate == '' || $iEDate == '' || $sR == '' || $eS == '' || $notes == ''){
+      echo '<script>alert("Error Data is not completed")</script>';
+      return;
+    }
+   mysqli_query($this->db->getConn(), "UPDATE personnelAffairs SET name ='$eN', 
                                                 code='$c', 
                                                  arabicName='$aN',
                                                   religion='$r',
@@ -55,13 +59,13 @@ public function addProfession($eN, $c, $aN, $r, $n, $g, $bD, $nN, $fN, $addr, $p
                                                   insuranceEndDate='$iEDate',
                                                   systemRole='$sR',
                                                   educationSystem='$eS',
-                                                  notes='$notes'
-                                                WHERE email='".$_SESSION['email']."' 
-                                                AND ID='".$id."'");
-    echo '<script>alert("Done, Employee updated Successfully")</script>';
+                                                  notes='$notes' WHERE ID='".$id."'");
+
+    echo '<script>alert("Done, Data Updated Successfully")</script>';
+    header('Refresh: 0.1');
     return;
-}
-public function viewTable(){
+  }
+  public function viewTable(){
     parent::connect();
     $result = mysqli_query($this->db->getConn(), "SELECT * FROM personnelAffairs");
     while($row = mysqli_fetch_array($result)){
@@ -83,7 +87,72 @@ public function viewTable(){
     <?php    
     }
   }   
-} 
+
+public function Search($que){   
+    parent::connect();    
+    $output = '';  
+echo "<div class='register'>";
+$search = mysqli_real_escape_string($this->db->getConn(), $que);
+$query = "SELECT * FROM personnelAffairs WHERE name LIKE '%".$search."%'|| nationalNumber LIKE '%".$search."%'";
+$result = mysqli_query($this->db->getConn(), $query);
+if(mysqli_num_rows($result) > 0){
+        while($row = mysqli_fetch_array($result)){
+        ?>
+
+                <div class="comp">
+                <h4><?php echo "Name: " .$row["name"] ?></h4>
+                <h4><?php echo "National Number: " .$row["nationalNumber"] ?></h4>
+                <a href= "updateSelectedEmployee.php?<!?>=<?php echo $row['ID']+255?>">Update</a><br>
+                </div>
+                <br>
+    <?php
+    }
+}
+if(mysqli_num_rows($result) == 0){
+    echo '<h3>Data Not Found</h3>';
+    header('Refresh: 0.7');
+}
+
+echo "</div>";
+ }
+
+public function viewUpdate($id){
+parent::connect();
+$sql = "SELECT * FROM personnelAffairs WHERE ID='".$id."'-255";
+$result = mysqli_query($this->db->getConn(), $sql);
+
+if($result){
+   $row = mysqli_fetch_array($result);
+   $ar['a'] = $row['name'];
+   $ar['b'] = $row['code'];
+   $ar['c'] = $row['arabicName'];
+   $ar['d'] = $row['religion'];
+   $ar['e'] = $row['nationality'];
+   $ar['f'] = $row['gender'];
+   $ar['g'] = $row['birthDate'];
+   $ar['h'] = $row['nationalNumber'];
+   $ar['i'] = $row['foreginerNumber'];
+   $ar['j'] = $row['address'];
+   $ar['k'] = $row['phoneNumber'];
+   $ar['l'] = $row['qualification'];
+   $ar['m'] = $row['graduationYear'];
+   $ar['n'] = $row['graduationGrade'];
+   $ar['o'] = $row['expYears'];
+   $ar['p'] = $row['job'];
+   $ar['q'] = $row['specialization'];
+   $ar['r'] = $row['department'];
+   $ar['s'] = $row['contractDate'];
+   $ar['t'] = $row['insuranceNumber'];
+   $ar['u'] = $row['insuranceDate'];
+   $ar['v'] = $row['insuranceEndDate'];
+   $ar['w'] = $row['systemRole'];
+   $ar['x'] = $row['educationSystem'];
+   $ar['y'] = $row['notes'];
+   return $ar;
+   }
+ } 
+
+}
 
 
 ?>

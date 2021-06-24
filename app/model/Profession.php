@@ -234,5 +234,30 @@ public function insertProfession($eN, $c, $aN, $r, $n, $g, $bD, $nN, $fN, $addr,
     $flag = false;
     return $flag;
  }
+
+public function Search($que){   
+    parent::connect();    
+    $output = '';  
+echo "<div class='register'>";
+$search = mysqli_real_escape_string($this->db->getConn(), $que);
+$query = "SELECT * FROM personnelAffairs WHERE name LIKE '%".$search."%'|| nationalNumber LIKE '%".$search."%'";
+$result = mysqli_query($this->db->getConn(), $query);
+if(mysqli_num_rows($result) > 0){
+        while($row = mysqli_fetch_array($result)){
+        ?>
+
+                <div class="comp">
+                <h4><?php echo "Name: " .$row["name"] ?></h4>
+                <h4><?php echo "National Number: " .$row["nationalNumber"] ?></h4>
+                <a href= "updateSelectedEmployee.php?<!?>=<?php echo $row['ID']+255?>">Update</a><br>
+                </div>
+                <br>
+    <?php
+    }
 }
-?>
+else{
+    echo '<h3>Data Not Found</h3>';
+}
+echo "</div>";
+ }
+}?>
