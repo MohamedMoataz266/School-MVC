@@ -165,7 +165,7 @@ protected function validationDataProfession(){
     else if (strlen($this->nationalNumber) >= 15 || strlen($this->nationalNumber) <= 13){
         return $flag;
     }
-    $sql = mysqli_query($this->db->getConn(), "SELECT nationalNumber FROM personnelaffairs");
+    $sql = mysqli_query($this->db->getConn(), "SELECT nationalNumber FROM personnelAffairs");
     while($row = mysqli_fetch_array($sql)){
         if($row['nationalNumber'] == $this->nationalNumber){
             return $flag;

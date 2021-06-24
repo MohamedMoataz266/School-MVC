@@ -26,27 +26,27 @@ class viewUpdateStudent extends View{
                          
                                <label class="mb-3 mr-1" for="insdate">Registration number: </label>
                               <div class="col-md-12">
-                               <input class="form-control" type="text" name="regnumber" placeholder="Registration number" value="<?php echo $view->viewUpdate($_GET['<!?>'])['b']; ?>">
+                               <input class="form-control" type="text" name="regnumber" placeholder="Registration number" value="<?php ob_start();  echo $view->viewUpdate($_GET['<!?>'])['b']; ?>">
                                </div>
                                <br>
                                <label class="mb-3 mr-1" for="insdate">Nationality: </label>
                                <div class="col-md-12">
-                               <input class="form-control" type="text" name="nationality" placeholder="Nationality" value="<?php echo $view->viewUpdate($_GET['<!?>'])['c'];?>">
+                               <input class="form-control" type="text" name="nationality" placeholder="Nationality" value="<?php ob_start();  echo $view->viewUpdate($_GET['<!?>'])['c'];?>">
                                </div>
                                <br>
                                <label class="mb-3 mr-1" for="insdate">Religion: </label>
                                <div class="col-md-12">
-                               <input class="form-control" type="text" name="religion" placeholder="Religion"value="<?php echo $view->viewUpdate($_GET['<!?>'])['d'];?>">
+                               <input class="form-control" type="text" name="religion" placeholder="Religion"value="<?php  ob_start(); echo $view->viewUpdate($_GET['<!?>'])['d'];?>">
                                </div>
                                <br>
                                <label class="mb-3 mr-1" for="insdate">Place of birth: </label>
                                <div class="col-md-12">
-                               <input class="form-control" type="text" name="birthplace" placeholder="Birth Place" value="<?php echo $view->viewUpdate($_GET['<!?>'])['e'];?>">
+                               <input class="form-control" type="text" name="birthplace" placeholder="Birth Place" value="<?php ob_start(); echo $view->viewUpdate($_GET['<!?>'])['e'];?>">
                                </div>
                                <br>
                                <label class="mb-3 mr-1" for="insdate">Date of birth: </label>
                                <div class="col-md-12">
-                               <input class="form-control" type="text" name="dateofbirth" placeholder="Date of Birth" value="<?php echo $view->viewUpdate($_GET['<!?>'])['f'];?>">
+                               <input class="form-control" type="text" name="dateofbirth" placeholder="Date of Birth" value="<?php ob_start(); echo $view->viewUpdate($_GET['<!?>'])['f'];?>">
                                </div>
                                <br>
                                <label class="mb-3 mr-1" for="insdate">Mother name: </label>
@@ -56,28 +56,28 @@ class viewUpdateStudent extends View{
                                <br>
                                <label class="mb-3 mr-1" for="insdate">Address: </label>
                                <div class="col-md-12">
-                               <input class="form-control" type="text" name="address" placeholder="address" value="<?php echo $view->viewUpdate($_GET['<!?>'])['h'];?>">
+                               <input class="form-control" type="text" name="address" placeholder="address" value="<?php ob_start(); echo $view->viewUpdate($_GET['<!?>'])['h'];?>">
                                </div>
                                <br>
 
                                <label class="mb-3 mr-1" for="insdate">National number: </label>
                             <div class="col-md-12">
-                                <input class="form-control" type="text" name="nationalNumber" placeholder="National number" value="<?php echo $view->viewUpdate($_GET['<!?>'])['l'];?>">
+                                <input class="form-control" type="text" name="nationalNumber" placeholder="National number" value="<?php ob_start(); echo $view->viewUpdate($_GET['<!?>'])['l'];?>">
                                  </div>
                                  <br>
                                  <label class="mb-3 mr-1" for="insdate">Phone number: </label>
                                  <div class="col-md-12">
-                                <input class="form-control" type="text" name="number" placeholder="Phone number"value="<?php echo $view->viewUpdate($_GET['<!?>'])['i'];?>">
+                                <input class="form-control" type="text" name="number" placeholder="Phone number"value="<?php ob_start(); echo $view->viewUpdate($_GET['<!?>'])['i'];?>">
                                  </div>
                                  <br>
                                  <label class="mb-3 mr-1" for="insdate">Father's job: </label>
                                  <div class="col-md-12">
-                                <input class="form-control" type="text" name="fatherJob" placeholder="Father's job" value="<?php echo $view->viewUpdate($_GET['<!?>'])['j'];?>">
+                                <input class="form-control" type="text" name="fatherJob" placeholder="Father's job" value="<?php ob_start(); echo $view->viewUpdate($_GET['<!?>'])['j'];?>">
                                  </div>
                                  <br>
                                  <label class="mb-3 mr-1" for="insdate">Class: </label>
                                  <div class="col-md-12">
-                                <input class="form-control" type="text" name="clas" placeholder="Class"value="<?php echo $view->viewUpdate($_GET['<!?>'])['m'];?>">
+                                <input class="form-control" type="text" name="clas" placeholder="Class"value="<?php ob_start(); echo $view->viewUpdate($_GET['<!?>'])['m'];?>">
                                  </div>
                                  <br>
                            

@@ -20,7 +20,7 @@ function teacherMenu(){
     $.get("../app/model/homemenu.php", function(data){
         $(".home").replaceWith('<a href="teacherFrontEnd.php">Home</a>');
         $(".atr1").replaceWith('<a href="addQuestions.php">Add Questions</a>');
-        $(".atr2").replaceWith('<a href="viewstudents.php">View Students</a>');
+        $(".atr2").replaceWith('<a href="viewStudents.php">View Students</a>');
         $(".atr3").replaceWith('<a href="addVideo.php">Videos</a>');
         $(".atr4").replaceWith('<a href="answers.php">View Answers</a>');
         $(".atr5").replaceWith('<a href="sendMessageTeacher.php">Send Message</a>');
